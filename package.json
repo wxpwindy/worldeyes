@@ -1,0 +1,24 @@
+{
+  "name": "worldeyes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local multi-store shopping search crawler",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env index.js",
+    "test": "node --test",
+    "test:ui": "node scripts/check-ui.js",
+    "browser:install": "playwright install chromium"
+  },
+  "engines": {
+    "node": ">=22.9"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "playwright": "^1.56.1",
+    "robots-parser": "^3.0.1",
+    "sharp": "^0.35.5"
+  }
+}

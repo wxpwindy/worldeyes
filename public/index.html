@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Worldeyes | Shopping search</title>
+    <link rel="stylesheet" href="/styles.css?v=2">
+    <script type="module" src="/app.js?v=2"></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Worldeyes home"><span class="brand-mark"
+                aria-hidden="true">w.</span>worldeyes</a>
+        <span class="local-label"><span class="status-dot"></span>Local workspace</span>
+    </header>
+    <main>
+        <section class="heading">
+            <div>
+                <p class="eyebrow">PRODUCT DISCOVERY</p>
+                <h1>Shopping search<span>.</span></h1>
+            </div><span class="limit">10 results / store</span>
+        </section>
+        <form id="search-form">
+            <label for="keywords" class="field-label">Keywords</label>
+            <div class="search-row"><input id="keywords" name="keywords" type="search"
+                    placeholder="What are you looking for?" maxlength="160" required autocomplete="off"><button
+                    id="search-button" class="primary" type="submit">Search stores</button><button id="cancel-button"
+                    type="button" hidden>Cancel</button></div>
+            <section class="photo-search" aria-labelledby="photo-title">
+                <div class="photo-fields">
+                    <label id="photo-title" for="picture" class="field-label">Product picture</label>
+                    <input id="picture" type="file" accept="image/jpeg,image/png,image/webp"
+                        aria-describedby="picture-limits">
+                    <p id="picture-limits" class="photo-caption">JPEG, PNG or WebP / 5 MB max</p>
+                    <p id="photo-status" class="photo-caption" role="status" aria-live="polite"></p>
+                </div>
+                <img id="picture-preview" alt="Selected product picture" hidden>
+                <div class="photo-actions">
+                    <button id="picture-search-button" type="button" disabled>Search picture</button>
+                    <button id="remove-picture-button" type="button" hidden>Remove picture</button>
+                </div>
+            </section>
+            <fieldset>
+                <legend>Websites</legend>
+                <div class="store-options">
+                    <label class="store-option"><input type="checkbox" name="website" value="ebay" checked><span
+                            class="store-name ebay">eBay</span><span class="domain">ebay.com</span></label>
+                    <label class="store-option"><input type="checkbox" name="website" value="amazon" checked><span
+                            class="store-name amazon">amazon</span><span class="domain">amazon.com</span></label>
+                    <label class="store-option amazon-uk"><input type="checkbox" name="website" value="amazon_uk"><span
+                            class="store-name amazon_uk">Amazon UK</span><span
+                            class="domain">amazon.co.uk</span></label>
+                    <label class="store-option amazon-de"><input type="checkbox" name="website" value="amazon_de"><span
+                            class="store-name amazon_de">Amazon DE</span><span class="domain">amazon.de</span></label>
+                </div>
+                <p id="store-limit" class="photo-caption">Maximum 2 stores.</p>
+            </fieldset>
+        </form>
+        <p id="error" role="alert" hidden></p>
+        <section class="results-section" aria-labelledby="results-title">
+            <div class="results-toolbar">
+                <div>
+                    <h2 id="results-title">Results</h2>
+                    <p id="search-status" role="status" aria-live="polite">Ready when you are.</p>
+                </div><button id="export-button" type="button" disabled>Export CSV</button>
+            </div>
+            <div id="results" class="results-grid"></div>
+        </section>
+        <footer><span>WORLDEYES / SHOPPING INDEX</span><span>eBay, Amazon (US/UK/DE) / Global storefronts</span>
+        </footer>
+    </main>
+</body>
+
+</html>
